@@ -114,7 +114,7 @@ inline vec3 operator*( const vec3& i_vec, doublt i_t)
 
 inline vec3 operator/( vec3 i_v, double i_t )
 {
-    return (1/t) * i_v;
+    return (1/i_t) * i_v;
 }
 
 // -----------------------------------------
