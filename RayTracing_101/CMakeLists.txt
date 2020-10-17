@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # add executable
-add_executable(${PROJECT_NAME} RGBImage.cpp)
+add_executable(${PROJECT_NAME} main.cpp)
 
 # include dir
 target_include_directories(${PROJECT_NAME} PUBLIC

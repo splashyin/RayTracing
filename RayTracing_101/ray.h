@@ -22,7 +22,7 @@ public:
     // Ray function P(t) = A + tB
     inline point3 at( double i_t ) const
     {
-        return m_origin + t * m_direction;
+        return m_origin + i_t * m_direction;
     }
 
     point3 m_origin;
