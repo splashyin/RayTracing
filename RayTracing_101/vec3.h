@@ -6,21 +6,19 @@
 class vec3
 {
 public:
-    vec3() 
-    : m_vector{0,0,0} {}
+    vec3() : m_vector{0,0,0} {}
 
-    vec3(double v0, double v1, double v2)
-    : m_vector{double v0, double v1, double v2} {}
+    vec3(double v0, double v1, double v2) : m_vector{v0, v1, v2} {}
 
     double x() const { return m_vector[0]; }
     double y() const { return m_vector[1]; }
     double z() const { return m_vector[2]; }
 
     vec3 operator-() const { return vec3( -m_vector[0], -m_vector[1], -m_vector[2] ); }
-    double operator[] ( int i ) { return m_vector[i]; }
+    double operator[] ( int i ) const { return m_vector[i]; }
     double& operator[] ( int i ) { return m_vector[i]; }
 
-    &vec3 operator*=( const double t )
+    vec3& operator*=( const double t )
     {
         m_vector[0] *= t;
         m_vector[1] *= t;
@@ -28,7 +26,7 @@ public:
         return *this;
     }
     
-    &vec3 operator+=( const vec3& i_other )
+    vec3& operator+=( const vec3& i_other )
     {
         m_vector[0] += i_other.m_vector[0];
         m_vector[1] += i_other.m_vector[1];
@@ -36,7 +34,7 @@ public:
         return *this;
     }
 
-    &vec3 operator/=( const double t )
+    vec3& operator/=( const double t )
     {
         m_vector[0] /= t;
         m_vector[1] /= t;
@@ -105,7 +103,7 @@ inline vec3 operator*( double i_t, const vec3& i_vec )
 
 // -----------------------------------------
 
-inline vec3 operator*( const vec3& i_vec, doublt i_t)
+inline vec3 operator*( const vec3& i_vec, double i_t)
 {
     return i_vec * i_t;
 }
